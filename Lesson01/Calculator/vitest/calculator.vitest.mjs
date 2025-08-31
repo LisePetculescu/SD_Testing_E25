@@ -1,6 +1,6 @@
 
 import { expect, test } from 'vitest'
-import { sum, subtract, multiply, divide } from "./calculator.mjs";
+import { sum, subtract, multiply, divide } from "../calculator.mjs";
 
 
 // Sum - positive tests
