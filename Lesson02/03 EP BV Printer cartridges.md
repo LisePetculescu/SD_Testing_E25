@@ -8,3 +8,4 @@ Use black-box analysis to identify a comprehensive series of test cases:
 4. Implement the discount calculation function in code and write the corresponding unit tests in the language and unit test framework of your choice
 
 <sub>Adapted from Hambling, Brian (2019). *Software Testing: An ISTQB-BCS Certified Tester Foundation Guide*, 4th ed.</sub>
+

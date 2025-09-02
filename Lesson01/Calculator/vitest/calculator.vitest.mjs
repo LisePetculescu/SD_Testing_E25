@@ -99,6 +99,14 @@ test(`multiply 2.5 * -3 to equal -7.5`, () => {
     expect(multiply(2.5, -3)).toBe(-7.5);
 })
 
+test(`multiply 2.5 * 0 to equal 0`, () => {
+    expect(multiply(2.5, 0)).toBe(0);
+})
+
+test(`multiply 0 * 3 to equal 0`, () => {
+    expect(multiply(0, 3)).toBe(0);
+})
+
 
 // Multiply - negative tests
 
@@ -125,6 +133,13 @@ test(`divide 2.5 / -2 to equal -1.25`, () => {
     expect(divide(2.5, -2)).toBe(-1.25);
 })
 
+test(`divide 1 / 1 to be a number`, () => {
+    const value = divide(1, 1);
+
+    expect(typeof value).toBe('number')
+
+})
+
 
 // Divide - negative tests
 
@@ -132,10 +147,16 @@ test(`divide 2.5 / 3 to not equal 1`, () => {
     expect(divide(2.5, 3.75)).not.toBe(1);
 })
 
-test(`divide 1 / 1 to be a number`, () => {
-    const value = divide(1, 1);
+test(`divide 2.5 / 0 to equal Infinity`, () => {
+    expect(divide(2.5, 0)).toBe(Infinity);
+})
 
-    expect(typeof value).toBe('number')
+
+
+test(`divide -1 / -1 to be 1`, () => {
+    const value = divide(-1, -1);
+
+    expect(value).toBe(1)
 
 })
 

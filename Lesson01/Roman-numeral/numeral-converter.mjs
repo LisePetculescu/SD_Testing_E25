@@ -107,16 +107,17 @@ function isValidRoman(numerals) {
     //      return false ;
     // };
     
-    // with regexp
+    // with regexp from chatGPT
     if (/IIII|XXXX|CCCC|MMMM/.test(roman)) return false; // I, X, C, M can't repeat 4 times
     if (/VV|LL|DD/.test(roman)) return false;            // V, L, D can't repeat
 
-    // Check for illegal subtraction
+    // Check for illegal subtraction  from chatGPT
     const illegalSubs = ["IL","IC","ID","IM","VX","VL","VC","VD","VM","XD","XM","LC","LD","LM","DM"];
     for (const pair of illegalSubs) {
         if (roman.includes(pair)) return false;
     }
 
+    // with regexp from chatGPT
     const romanRegex = /^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
     return romanRegex.test(numerals.toUpperCase());
 
