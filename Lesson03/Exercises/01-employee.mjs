@@ -1,6 +1,4 @@
-import { C } from "vitest/dist/chunks/reporters.d.BFLkQcL6.js";
-
-class Employee {
+export class Employee {
 
     // --> '#' --> private field
 
@@ -32,15 +30,15 @@ class Employee {
     #country;
 
     constructor (cpr, firstname, lastname, department, baseSalary, educationalLevel, dateOfBirth, dateOfEmployment, country) {
-        this.cprNumber = cpr;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.department = department;
-        this.baseSalary = baseSalary;
-        this.educationalLevel = educationalLevel;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfEmployment = dateOfEmployment;
-        this.country = country;
+        this.cprNumber(cpr);
+        this.firstname(firstname);
+        this.lastname(lastname); 
+        this.department(department);
+        this.baseSalary(baseSalary);
+        this.educationalLevel(educationalLevel);
+        this.dateOfBirth(dateOfBirth);
+        this.dateOfEmployment(dateOfEmployment);
+        this.country(country);
     }
 
     // static allowedRoles = ["HR", "Finance", "IT", "Sales", "General Services"];
@@ -213,8 +211,6 @@ class Employee {
 
         this.#country = value;
     }
-
-
 
 
 
