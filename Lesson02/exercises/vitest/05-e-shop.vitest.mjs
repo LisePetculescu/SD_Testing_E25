@@ -2,6 +2,18 @@ import { expect, test } from "vitest";
 import { discountCalculator } from "../05-e-shop.mjs";
 
 
+
+function sonarTest() {
+  
+  let hello = "Hi There!";
+
+}
+
+sonarTest(1)
+
+
+
+
 // positive tests
 
 test(`check basket amount: 550.1 kr equals discount amount: 27.51kr `, () => {

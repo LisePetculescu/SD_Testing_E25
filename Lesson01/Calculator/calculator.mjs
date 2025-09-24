@@ -7,6 +7,7 @@ function sum(a, b) {
     return a + b;
 };
 
+
 function subtract(a, b) {
         if (typeof a !== 'number' || typeof b !== 'number') {
         throw new Error('Incorrect parameter type');
