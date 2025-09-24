@@ -1,6 +1,45 @@
 import { expect, test } from "vitest";
 import { Employee } from "../01-employee.mjs";
 
+// test(`check wrong cpr number throws error `, () => {
+//     // Example: create a new Employee instance
+//     const emp = new Employee(
+//         "1234567890",           // cpr (10 digits)
+//         "Anne-Mette",           // firstname
+//         "Hansen",               // lastname
+//         "IT",                   // department
+//         30000,                  // baseSalary
+//         2,                      // educationalLevel (Secondary)
+//         "24/09/1990",           // dateOfBirth (dd/MM/yyyy, at least 18 years ago)
+//         "01/01/2020",           // dateOfEmployment (dd/MM/yyyy, not in the future)
+//         "Denmark"               // country
+//     );
+
+
+
+ 
+
+   
+
+//     // expect(emp.cprNumber(123)).toThrow(Error);
+// })
+
+   test(`check wrong cpr number throws error `, () => {
+ 
+    const newEmp = new Employee(
+        "1234567890",           // cpr (10 digits)
+        "Anne-Mette",           // firstname
+        "Hansen",               // lastname
+        "IT",                   // department
+        30000,                  // baseSalary
+        2,                      // educationalLevel (Secondary)
+        "24/09/1990",           // dateOfBirth (dd/MM/yyyy, at least 18 years ago)
+        "01/01/2020",           // dateOfEmployment (dd/MM/yyyy, not in the future)
+        "Denmark"               // country
+    );
+        expect(() => { newEmp.cprNumber = 1234; }).toThrow("wrong cpr number");
+    })
+
 // parametized tests
 // ########## Equivalence Partition tests ##########
 // cpr 10 digits

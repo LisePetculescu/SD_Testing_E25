@@ -30,15 +30,15 @@ export class Employee {
     #country;
 
     constructor (cpr, firstname, lastname, department, baseSalary, educationalLevel, dateOfBirth, dateOfEmployment, country) {
-        this.cprNumber(cpr);
-        this.firstname(firstname);
-        this.lastname(lastname); 
-        this.department(department);
-        this.baseSalary(baseSalary);
-        this.educationalLevel(educationalLevel);
-        this.dateOfBirth(dateOfBirth);
-        this.dateOfEmployment(dateOfEmployment);
-        this.country(country);
+        this.cprNumber = cpr;
+        this.firstname = firstname;
+        this.lastname = lastname; 
+        this.department = department;
+        this.baseSalary = baseSalary;
+        this.educationalLevel = educationalLevel;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfEmployment = dateOfEmployment;
+        this.country = country;
     }
 
     // static allowedRoles = ["HR", "Finance", "IT", "Sales", "General Services"];
@@ -127,29 +127,32 @@ export class Employee {
         // cpr-number excactly 10 digits
 
         if (!this.isTenDigits(value)) {
-            return null;
-        }
-
+           
+            throw new Error("wrong cpr number");
+        } 
+        
         this.#personalIdentificationNumber = value;
+
     }
 
     set firstname(value) {
         // firstname 1-30 characters. The characters can be alphabetic, spaces or a dash
         if (!this.isValidName(value)) {
-            return null;
+            throw new Error("invalid firstname");
+            
         }
-
         this.#firstname = value;
+
     }
 
     set lastname(value) {
         // lastname 1-30 characters. The characters can be alphabetic, spaces or a dash
 
-        if (!this.isValidName(value)) {
-            return null;
+        if (this.isValidName(value)) {
+           
+            this.#lastname = value;
         }
 
-        this.#lastname = value;
     }
 
     set department(value) {
@@ -183,7 +186,7 @@ export class Employee {
     set dateOfBirth(value) {
         // dd/MM/yyyy. At least 18 years from the present day
         
-        if (!isValiddateOfBirth(value)) {
+        if (!this.isValiddateOfBirth(value)) {
             return null
         }
 
@@ -194,7 +197,7 @@ export class Employee {
     set dateOfEmployment(value) {
         // dd/MM/yyyy. Equal or lower than the present day
 
-        if (!isValidEmploymentDate(value)) {
+        if (!this.isValidEmploymentDate(value)) {
             return null;
         }
 
